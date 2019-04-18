@@ -1,0 +1,19 @@
+What the project does
+How to run the project
+Where to find pieces of configuration or important code
+Any questions about the project
+Any questions about libraries or syntax you aren't familiar with
+Any questions about choices in the code you don't understand
+Any improvements you think could be made to the code!
+
+
+- the project has articles and comments
+- entry file is ./src/server.js and migrations configuration in ./postgrator-config.js
+
+Questions:
+"What are the async and await statements in articles-route.js?"
+"What is DISTINCT in PostgreSQL? in articles-service.js"
+"What are "json_strip_nulls" and "json_build_object" in PostgreSQL? in articles-service.js"
+"What is "row_to_json" in PostgreSQL? in articles-service.js"
+
+

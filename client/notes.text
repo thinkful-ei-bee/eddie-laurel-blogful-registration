@@ -1,0 +1,12 @@
+React project
+
+Questions: 
+- What's in the services directory?
+- What's the TOKEN_KEY config setting for in ./src/config.js?
+- Is fortawesome used to make the frog icon and stuff?
+- What's a JWT?
+
+Notes:
+- Login page: nothing happens when values are submitted
+- Error when trying to post comments: error about a missing user_id
+- posts after article 1 aren't there
