@@ -12,7 +12,6 @@ export default class RegistrationForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { full_name, nick_name, user_name, password } = ev.target
-
     this.setState({
       error: null
     })
