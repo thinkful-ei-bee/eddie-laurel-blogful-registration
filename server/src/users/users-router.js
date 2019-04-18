@@ -6,8 +6,8 @@ const jsonBodyParser = express.json();
 const UsersService = require('./users-service');
 
 usersRouter
-  .post('/', jsonBodyParser, (req, res) => {
-    const {password} = req.body;
+  .post('/', jsonBodyParser, (req, res, next) => {
+    const {password, user_name} = req.body;
     for (const field of ['full_name','user_name','password']){
       if (!req.body[field]){
         return res.status(400).json({
@@ -21,8 +21,16 @@ usersRouter
       return res.status(400).json({
         error: passwordError
       })
-    
-    res.send('ok');
+      UsersService.hasUserWithUserName(
+        req.app.get('db'),
+        user_name
+      )
+        .then(hasUserWithUserName => {
+          if (hasUserWithUserName)
+            return res.status(400).json({ error: `Username already taken` })
+          res.send('ok');
+        })  
+        .catch(next);
   });
 
 module.exports = usersRouter;
